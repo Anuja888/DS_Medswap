@@ -1,0 +1,8 @@
+*
+!.gitignore
+!*.html
+!*.java
+!*.js
+!*.css
+!README.md
+!.gitkeep

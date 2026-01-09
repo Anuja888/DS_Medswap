@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Result - MEDSWAP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>MEDSWAP</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link">Register</a>
+                <a href="view-users.html" class="nav-link">Users</a>
+                <a href="medicine-view.html" class="nav-link">Medicines</a>
+                <a href="statistics.html" class="nav-link">Statistics</a>
+            </nav>
+        </header>
+
+        <!-- Match Result Section -->
+        <section class="match-section">
+            <div class="match-container">
+                <div class="match-header">
+                    <h1 class="match-title">Match Results</h1>
+                    <p class="match-subtitle">Best donor matches based on priority and distance</p>
+                </div>
+
+                <!-- Search Filter -->
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input type="text" id="matchSearch" class="search-input" placeholder="Search by medicine, user name, or location...">
+                </div>
+
+                <!-- Match Cards -->
+                <div class="match-results" id="matchResults">
+                    <!-- Match Card 1 - Matched -->
+                    <div class="match-card">
+                        <div class="match-status-badge matched">
+                            <svg class="status-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Matched
+                        </div>
+                        
+                        <div class="match-content">
+                            <div class="match-medicine">
+                                <svg class="medicine-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.5 16.5C3 15 3 12.5 4.5 11L11 4.5C12.5 3 15 3 16.5 4.5C18 6 18 8.5 16.5 10L10 16.5C8.5 18 6 18 4.5 16.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.5 10.5L19.5 4.5C21 3 23.5 3 25 4.5C26.5 6 26.5 8.5 25 10L19 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <h3>Paracetamol 500mg</h3>
+                            </div>
+
+                            <div class="match-details-grid">
+                                <!-- Donor Details -->
+                                <div class="user-details donor-details">
+                                    <div class="user-header">
+                                        <svg class="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Donor</h4>
+                                    </div>
+                                    <div class="user-info">
+                                        <p><strong>Name:</strong> Rajesh Kumar</p>
+                                        <p><strong>Contact:</strong> +91 9876543210</p>
+                                        <p><strong>Location:</strong> 17.4326°N, 78.4071°E</p>
+                                        <p><strong>Quantity:</strong> 50 tablets</p>
+                                        <p><strong>Expiry:</strong> Dec 2026</p>
+                                    </div>
+                                </div>
+
+                                <!-- Recipient Details -->
+                                <div class="user-details recipient-details">
+                                    <div class="user-header">
+                                        <svg class="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Recipient</h4>
+                                    </div>
+                                    <div class="user-info">
+                                        <p><strong>Name:</strong> Priya Sharma</p>
+                                        <p><strong>Contact:</strong> +91 8765432109</p>
+                                        <p><strong>Location:</strong> 17.4450°N, 78.3912°E</p>
+                                        <p><strong>Quantity Needed:</strong> 30 tablets</p>
+                                        <p><strong>Urgency:</strong> <span class="urgency-badge urgency-5">Critical (5)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Match Score and Distance -->
+                            <div class="match-metrics">
+                                <div class="metric">
+                                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div>
+                                        <p class="metric-label">Distance</p>
+                                        <p class="metric-value">2.4 km</p>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div>
+                                        <p class="metric-label">Match Score</p>
+                                        <p class="metric-value">95%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Match Card 2 - Pending -->
+                    <div class="match-card">
+                        <div class="match-status-badge pending">
+                            <svg class="status-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Pending
+                        </div>
+                        
+                        <div class="match-content">
+                            <div class="match-medicine">
+                                <svg class="medicine-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.5 16.5C3 15 3 12.5 4.5 11L11 4.5C12.5 3 15 3 16.5 4.5C18 6 18 8.5 16.5 10L10 16.5C8.5 18 6 18 4.5 16.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <h3>Amoxicillin 250mg</h3>
+                            </div>
+
+                            <div class="match-details-grid">
+                                <div class="user-details donor-details">
+                                    <div class="user-header">
+                                        <svg class="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Donor</h4>
+                                    </div>
+                                    <div class="user-info">
+                                        <p><strong>Name:</strong> Anita Desai</p>
+                                        <p><strong>Contact:</strong> +91 9123456789</p>
+                                        <p><strong>Location:</strong> 17.3850°N, 78.4867°E</p>
+                                        <p><strong>Quantity:</strong> 20 capsules</p>
+                                        <p><strong>Expiry:</strong> Mar 2027</p>
+                                    </div>
+                                </div>
+
+                                <div class="user-details recipient-details">
+                                    <div class="user-header">
+                                        <svg class="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Recipient</h4>
+                                    </div>
+                                    <div class="user-info">
+                                        <p><strong>Name:</strong> Vikram Singh</p>
+                                        <p><strong>Contact:</strong> +91 9988776655</p>
+                                        <p><strong>Location:</strong> 17.3616°N, 78.4747°E</p>
+                                        <p><strong>Quantity Needed:</strong> 15 capsules</p>
+                                        <p><strong>Urgency:</strong> <span class="urgency-badge urgency-3">Moderate (3)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="match-metrics">
+                                <div class="metric">
+                                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div>
+                                        <p class="metric-label">Distance</p>
+                                        <p class="metric-value">5.7 km</p>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div>
+                                        <p class="metric-label">Match Score</p>
+                                        <p class="metric-value">78%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Match Card 3 - Matched -->
+                    <div class="match-card">
+                        <div class="match-status-badge matched">
+                            <svg class="status-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Matched
+                        </div>
+                        
+                        <div class="match-content">
+                            <div class="match-medicine">
+                                <svg class="medicine-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.5 16.5C3 15 3 12.5 4.5 11L11 4.5C12.5 3 15 3 16.5 4.5C18 6 18 8.5 16.5 10L10 16.5C8.5 18 6 18 4.5 16.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <h3>Insulin Glargine 100U/ml</h3>
+                            </div>
+
+                            <div class="match-details-grid">
+                                <div class="user-details donor-details">
+                                    <div class="user-header">
+                                        <svg class="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Donor</h4>
+                                    </div>
+                                    <div class="user-info">
+                                        <p><strong>Name:</strong> Suresh Reddy</p>
+                                        <p><strong>Contact:</strong> +91 9012345678</p>
+                                        <p><strong>Location:</strong> 17.4485°N, 78.3908°E</p>
+                                        <p><strong>Quantity:</strong> 3 vials</p>
+                                        <p><strong>Expiry:</strong> Sep 2026</p>
+                                    </div>
+                                </div>
+
+                                <div class="user-details recipient-details">
+                                    <div class="user-header">
+                                        <svg class="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Recipient</h4>
+                                    </div>
+                                    <div class="user-info">
+                                        <p><strong>Name:</strong> Meena Patel</p>
+                                        <p><strong>Contact:</strong> +91 8899001122</p>
+                                        <p><strong>Location:</strong> 17.4380°N, 78.4010°E</p>
+                                        <p><strong>Quantity Needed:</strong> 2 vials</p>
+                                        <p><strong>Urgency:</strong> <span class="urgency-badge urgency-4">High (4)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="match-metrics">
+                                <div class="metric">
+                                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div>
+                                        <p class="metric-label">Distance</p>
+                                        <p class="metric-value">1.8 km</p>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div>
+                                        <p class="metric-label">Match Score</p>
+                                        <p class="metric-value">92%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 MEDSWAP - Medicine Exchange Network. Built with ❤️ for healthcare.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

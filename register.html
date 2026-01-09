@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MEDSWAP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>MEDSWAP</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link active">Register</a>
+                <a href="view-users.html" class="nav-link">Users</a>
+                <a href="medicine-view.html" class="nav-link">Medicines</a>
+                <a href="statistics.html" class="nav-link">Statistics</a>
+            </nav>
+        </header>
+
+        <!-- Registration Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1 class="form-title">Register User</h1>
+                    <p class="form-subtitle">Join our medicine exchange network as a donor or recipient</p>
+                </div>
+
+                <form id="registrationForm" class="form">
+                    <!-- Personal Information -->
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact" class="form-label">Contact Number *</label>
+                        <input type="tel" id="contact" name="contact" class="form-input" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required>
+                        <span class="form-hint">10-digit mobile number without country code</span>
+                    </div>
+
+                    <!-- Location Information -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="latitude" class="form-label">Latitude *</label>
+                            <input type="number" id="latitude" name="latitude" class="form-input" placeholder="17.4326" step="0.0001" min="-90" max="90" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude" class="form-label">Longitude *</label>
+                            <input type="number" id="longitude" name="longitude" class="form-input" placeholder="78.4071" step="0.0001" min="-180" max="180" required>
+                        </div>
+                    </div>
+
+                    <!-- User Type Selection -->
+                    <div class="form-group">
+                        <label class="form-label">User Type *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="userType" value="donor" id="donorRadio" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">
+                                    <strong>Donor</strong> - I have medicines to donate
+                                </span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="userType" value="recipient" id="recipientRadio" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">
+                                    <strong>Recipient</strong> - I need medicines
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Medicine Information -->
+                    <div class="form-group">
+                        <label for="medicine" class="form-label">Medicine Name *</label>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="medicine" name="medicine" class="form-input" placeholder="Start typing medicine name..." autocomplete="off" required>
+                            <div id="autocomplete-list" class="autocomplete-list"></div>
+                        </div>
+                        <span class="form-hint">Start typing to see suggestions</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity" class="form-label">Quantity *</label>
+                        <input type="number" id="quantity" name="quantity" class="form-input" placeholder="Enter quantity" min="1" required>
+                        <span class="form-hint">Number of units/tablets/bottles</span>
+                    </div>
+
+                    <!-- Conditional Fields - Donor -->
+                    <div id="donorFields" class="conditional-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="expiryDate" class="form-label">Expiry Date *</label>
+                            <input type="date" id="expiryDate" name="expiryDate" class="form-input">
+                        </div>
+                    </div>
+
+                    <!-- Conditional Fields - Recipient -->
+                    <div id="recipientFields" class="conditional-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="urgency" class="form-label">Urgency Level *</label>
+                            <select id="urgency" name="urgency" class="form-input">
+                                <option value="">Select urgency level</option>
+                                <option value="1">1 - Low (Can wait a week or more)</option>
+                                <option value="2">2 - Medium (Within a week)</option>
+                                <option value="3">3 - Moderate (Within 3-5 days)</option>
+                                <option value="4">4 - High (Within 1-2 days)</option>
+                                <option value="5">5 - Critical (Immediate/Same day)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Register
+                        </button>
+                        <button type="reset" class="btn btn-outline btn-large">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Clear Form
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success/Error Messages -->
+                <div id="message" class="message" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 MEDSWAP - Medicine Exchange Network. Built with ❤️ for healthcare.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

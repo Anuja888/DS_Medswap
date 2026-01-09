@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users - MEDSWAP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>MEDSWAP</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link">Register</a>
+                <a href="view-users.html" class="nav-link active">Users</a>
+                <a href="medicine-view.html" class="nav-link">Medicines</a>
+                <a href="statistics.html" class="nav-link">Statistics</a>
+            </nav>
+        </header>
+
+        <!-- Users Section -->
+        <section class="users-section">
+            <div class="users-container">
+                <div class="users-header">
+                    <h1 class="users-title">Registered Users</h1>
+                    <p class="users-subtitle">View all donors and recipients in the network</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="donors">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Donors
+                    </button>
+                    <button class="tab-btn" data-tab="recipients">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Recipients
+                    </button>
+                </div>
+
+                <!-- Search Box -->
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input type="text" id="userSearch" class="search-input" placeholder="Search by name, medicine, or location...">
+                </div>
+
+                <!-- Donors Table -->
+                <div id="donors" class="tab-content active">
+                    <div class="table-wrapper">
+                        <table class="users-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Medicine</th>
+                                    <th>Quantity</th>
+                                    <th>Expiry Date</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">R</div>
+                                            <span>Rajesh Kumar</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9876543210</td>
+                                    <td>Paracetamol 500mg</td>
+                                    <td>50 tablets</td>
+                                    <td>Dec 2026</td>
+                                    <td>17.4326°N, 78.4071°E</td>
+                                    <td><span class="status-badge status-matched">Matched</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">A</div>
+                                            <span>Anita Desai</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9123456789</td>
+                                    <td>Amoxicillin 250mg</td>
+                                    <td>20 capsules</td>
+                                    <td>Mar 2027</td>
+                                    <td>17.3850°N, 78.4867°E</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">S</div>
+                                            <span>Suresh Reddy</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9012345678</td>
+                                    <td>Insulin Glargine 100U/ml</td>
+                                    <td>3 vials</td>
+                                    <td>Sep 2026</td>
+                                    <td>17.4485°N, 78.3908°E</td>
+                                    <td><span class="status-badge status-matched">Matched</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">K</div>
+                                            <span>Kavita Rao</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9345678901</td>
+                                    <td>Metformin 500mg</td>
+                                    <td>100 tablets</td>
+                                    <td>Nov 2026</td>
+                                    <td>17.4239°N, 78.4738°E</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">M</div>
+                                            <span>Mohan Lal</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9567890123</td>
+                                    <td>Aspirin 75mg</td>
+                                    <td>60 tablets</td>
+                                    <td>Aug 2027</td>
+                                    <td>17.3970°N, 78.4569°E</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">N</div>
+                                            <span>Neha Gupta</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9789012345</td>
+                                    <td>Omeprazole 20mg</td>
+                                    <td>30 capsules</td>
+                                    <td>Jan 2027</td>
+                                    <td>17.4147°N, 78.4257°E</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Recipients Table -->
+                <div id="recipients" class="tab-content">
+                    <div class="table-wrapper">
+                        <table class="users-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Medicine</th>
+                                    <th>Quantity Needed</th>
+                                    <th>Urgency</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">P</div>
+                                            <span>Priya Sharma</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 8765432109</td>
+                                    <td>Paracetamol 500mg</td>
+                                    <td>30 tablets</td>
+                                    <td><span class="urgency-badge urgency-5">Critical (5)</span></td>
+                                    <td>17.4450°N, 78.3912°E</td>
+                                    <td><span class="status-badge status-matched">Matched</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">V</div>
+                                            <span>Vikram Singh</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9988776655</td>
+                                    <td>Amoxicillin 250mg</td>
+                                    <td>15 capsules</td>
+                                    <td><span class="urgency-badge urgency-3">Moderate (3)</span></td>
+                                    <td>17.3616°N, 78.4747°E</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">M</div>
+                                            <span>Meena Patel</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 8899001122</td>
+                                    <td>Insulin Glargine 100U/ml</td>
+                                    <td>2 vials</td>
+                                    <td><span class="urgency-badge urgency-4">High (4)</span></td>
+                                    <td>17.4380°N, 78.4010°E</td>
+                                    <td><span class="status-badge status-matched">Matched</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">A</div>
+                                            <span>Amit Verma</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9223344556</td>
+                                    <td>Metformin 500mg</td>
+                                    <td>60 tablets</td>
+                                    <td><span class="urgency-badge urgency-2">Medium (2)</span></td>
+                                    <td>17.4125°N, 78.4820°E</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">L</div>
+                                            <span>Lakshmi Iyer</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9445566778</td>
+                                    <td>Levothyroxine 50mcg</td>
+                                    <td>30 tablets</td>
+                                    <td><span class="urgency-badge urgency-3">Moderate (3)</span></td>
+                                    <td>17.3890°N, 78.4123°E</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar">R</div>
+                                            <span>Ramesh Nair</span>
+                                        </div>
+                                    </td>
+                                    <td>+91 9667788990</td>
+                                    <td>Atorvastatin 10mg</td>
+                                    <td>30 tablets</td>
+                                    <td><span class="urgency-badge urgency-1">Low (1)</span></td>
+                                    <td>17.4556°N, 78.3667°E</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 MEDSWAP - Medicine Exchange Network. Built with ❤️ for healthcare.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
